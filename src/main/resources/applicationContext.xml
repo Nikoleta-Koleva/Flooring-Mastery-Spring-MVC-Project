@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="io" class="com.sg.flooringmastery.ui.UserIOConsoleImpl" />
+
+    <bean id="orderDao" class="com.sg.flooringmastery.dao.OrderDaoFileImpl" />
+
+    <bean id="taxDao" class="com.sg.flooringmastery.service.TaxDaoImpl" />
+
+    <bean id="productDao" class="com.sg.flooringmastery.service.ProductDaoImpl" />
+
+    <bean id="view" class="com.sg.flooringmastery.ui.FlooringMasteryView">
+        <constructor-arg ref="io" />
+    </bean>
+
+    <bean id="service" class="com.sg.flooringmastery.service.FlooringMasteryServiceLayerImpl">
+        <constructor-arg ref="orderDao" />
+        <constructor-arg ref="taxDao" />
+        <constructor-arg ref="productDao" />
+    </bean>
+
+    <bean id="controller" class="com.sg.flooringmastery.controller.FlooringMasteryController">
+        <constructor-arg ref="service" />
+        <constructor-arg ref="view" />
+    </bean>
+
+</beans>
