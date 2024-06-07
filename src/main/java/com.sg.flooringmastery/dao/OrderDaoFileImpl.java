@@ -14,9 +14,19 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class OrderDaoFileImpl implements OrderDao {
-    private final String BACKUP_DIRECTORY_PATH = "backup";
-    private final String ORDERS_DIRECTORY_PATH = "src/main/java/com.sg.flooringmastery/orders";
+    private final String BACKUP_DIRECTORY_PATH;
+    private final String ORDERS_DIRECTORY_PATH;
     private static final String DELIMITER = ",";
+
+    public OrderDaoFileImpl() {
+        this.BACKUP_DIRECTORY_PATH = "backup";
+        this.ORDERS_DIRECTORY_PATH = "src/main/java/com.sg.flooringmastery/orders";
+    }
+
+    public OrderDaoFileImpl(String ordersDirectoryPath, String backupDirectoryPath) {
+        this.BACKUP_DIRECTORY_PATH = backupDirectoryPath;
+        this.ORDERS_DIRECTORY_PATH = ordersDirectoryPath;
+    }
 
     //Gives a list of orders by date
     @Override
