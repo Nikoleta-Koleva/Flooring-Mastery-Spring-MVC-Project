@@ -70,7 +70,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testGetOrdersForDate_NoOrders() {
+    void testGetOrdersForDateWithNoOrders() {
         // Create a date for which no orders exist
         Date date = new Date();
 
@@ -85,7 +85,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testAddOrder_Success() throws Exception {
+    void testAddOrderSuccess() throws Exception {
         Date date = new Date();
         Order order = new Order(1, "John Doe", "CA", new BigDecimal("25.00"), "Tile", new BigDecimal("249.00"),
                 new BigDecimal("3.50"), new BigDecimal("4.15"), new BigDecimal("871.50"),
@@ -98,7 +98,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testAddOrder_OrderPersistenceException() throws OrderPersistenceException {
+    void testAddOrderPersistenceException() throws OrderPersistenceException {
         // Create a Date object representing the current date and time
         Date date = new Date();
 
@@ -117,7 +117,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testCheckIfOrderExists_OrderExists() {
+    void testCheckIfOrderExists() {
         // Create an order with order number 1
         Order order = new Order(1, "John Doe", "CA", new BigDecimal("25.00"), "Tile", new BigDecimal("249.00"),
                 new BigDecimal("3.50"), new BigDecimal("4.15"), new BigDecimal("871.50"),
@@ -140,7 +140,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testCheckIfOrderExists_OrderDoesNotExist() {
+    void testCheckIfOrderDoesNotExist() {
         List<Order> orders = Collections.emptyList();
 
         Order result = orderDao.checkIfOrderExists(orders, 1);
@@ -148,7 +148,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testWriteOrdersToFileByDate_Success() throws Exception {
+    void testWriteOrdersToFileByDateSuccess() throws Exception {
         Date date = new Date();
         Order order = new Order(1, "John Doe", "CA", new BigDecimal("25.00"), "Tile", new BigDecimal("249.00"),
                 new BigDecimal("3.50"), new BigDecimal("4.15"), new BigDecimal("871.50"),
@@ -162,7 +162,7 @@ public class OrderDaoImplTests {
     }
 
     @Test
-    void testWriteOrdersToFileByDate_OrderPersistenceException() throws OrderPersistenceException {
+    void testWriteOrdersToFileByDateOrderPersistenceException() throws OrderPersistenceException {
         Date date = new Date();
         Order order = new Order(1, "John Doe", "CA", new BigDecimal("25.00"), "Tile", new BigDecimal("249.00"),
                 new BigDecimal("3.50"), new BigDecimal("4.15"), new BigDecimal("871.50"),

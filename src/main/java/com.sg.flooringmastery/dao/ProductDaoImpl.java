@@ -5,6 +5,7 @@ import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
@@ -14,15 +15,19 @@ public class ProductDaoImpl implements ProductDao {
     private String productType;
     private BigDecimal costPerSquareFoot;
     private BigDecimal laborCostPerSquareFoot;
-    private final String PRODUCTS_DIRECTORY_PATH = "files/Products.txt";
+    private String PRODUCTS_DIRECTORY_PATH;
 
     public ProductDaoImpl() {
-
+        PRODUCTS_DIRECTORY_PATH = "files/Products.txt";
     }
 
     public ProductDaoImpl(BigDecimal costPerSquareFoot, BigDecimal laborCostPerSquareFoot) {
         this.costPerSquareFoot = costPerSquareFoot;
         this.laborCostPerSquareFoot = laborCostPerSquareFoot;
+    }
+
+    public ProductDaoImpl(Path productsDirectoryPath) {
+        this.PRODUCTS_DIRECTORY_PATH = String.valueOf(productsDirectoryPath);
     }
 
     public BigDecimal getCostPerSquareFoot() {

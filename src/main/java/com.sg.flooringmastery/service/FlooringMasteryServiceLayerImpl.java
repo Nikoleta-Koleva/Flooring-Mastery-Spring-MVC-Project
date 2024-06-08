@@ -206,7 +206,7 @@ public class FlooringMasteryServiceLayerImpl implements FlooringMasteryServiceLa
 
     public boolean isValidProductType(String productType) {
         try {
-            List<String> productTypes = Files.readAllLines(Paths.get("src/main/java/com.sg.flooringmastery/Products.txt"))
+            List<String> productTypes = Files.readAllLines(Paths.get("files/Products.txt"))
                     .stream()
                     .map(line -> line.split(",")[0].trim())
                     .collect(Collectors.toList());
