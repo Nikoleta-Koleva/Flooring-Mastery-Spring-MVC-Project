@@ -1,5 +1,6 @@
 package com.sg.flooringmastery.dao;
 
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 
 import java.util.Date;

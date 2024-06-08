@@ -1,6 +1,6 @@
-package com.sg.flooringmastery.service;
+package com.sg.flooringmastery.dao;
 
-import com.sg.flooringmastery.dao.OrderPersistenceException;
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,7 +17,7 @@ public class TaxDaoImpl implements TaxDao {
     private final String TAXES_DIRECTORY;
 
     public TaxDaoImpl() {
-        TAXES_DIRECTORY = "src/main/java/com.sg.flooringmastery/Taxes.txt";
+        TAXES_DIRECTORY = "files/Taxes.txt";
     }
 
     public TaxDaoImpl(String testFile){

@@ -1,7 +1,7 @@
 package com.sg.flooringmastery.service;
 
-import com.sg.flooringmastery.dao.OrderDao;
-import com.sg.flooringmastery.dao.OrderPersistenceException;
+import com.sg.flooringmastery.dao.*;
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 
 import java.io.IOException;

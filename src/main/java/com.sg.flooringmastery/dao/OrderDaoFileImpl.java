@@ -1,5 +1,6 @@
 package com.sg.flooringmastery.dao;
 
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 
 import java.io.BufferedReader;
@@ -20,7 +21,7 @@ public class OrderDaoFileImpl implements OrderDao {
 
     public OrderDaoFileImpl() {
         this.BACKUP_DIRECTORY_PATH = "backup";
-        this.ORDERS_DIRECTORY_PATH = "src/main/java/com.sg.flooringmastery/orders";
+        this.ORDERS_DIRECTORY_PATH = "files/orders";
     }
 
     public OrderDaoFileImpl(String ordersDirectoryPath, String backupDirectoryPath) {

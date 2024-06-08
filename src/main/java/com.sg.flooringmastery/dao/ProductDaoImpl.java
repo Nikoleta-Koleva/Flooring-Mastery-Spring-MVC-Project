@@ -1,6 +1,6 @@
-package com.sg.flooringmastery.service;
+package com.sg.flooringmastery.dao;
 
-import com.sg.flooringmastery.dao.OrderPersistenceException;
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -14,7 +14,7 @@ public class ProductDaoImpl implements ProductDao {
     private String productType;
     private BigDecimal costPerSquareFoot;
     private BigDecimal laborCostPerSquareFoot;
-    private final String PRODUCTS_DIRECTORY_PATH = "src/main/java/com.sg.flooringmastery/Products.txt";
+    private final String PRODUCTS_DIRECTORY_PATH = "files/Products.txt";
 
     public ProductDaoImpl() {
 
