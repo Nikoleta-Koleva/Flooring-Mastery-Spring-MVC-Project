@@ -1,4 +1,4 @@
-package com.sg.flooringmastery.dao;
+package com.sg.flooringmastery.exceptions;
 
 public class OrderPersistenceException extends Exception {
     public OrderPersistenceException(String message) {

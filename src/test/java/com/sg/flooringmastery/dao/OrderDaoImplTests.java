@@ -1,5 +1,6 @@
 package com.sg.flooringmastery.dao;
 
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -22,10 +23,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
-public class OrderDaoFileImplTest {
+public class OrderDaoImplTests {
     private static Path ORDERS_DIRECTORY;
     private static Path BACKUP_DIRECTORY;
-    private static final String FILE_PATH = "src/main/java/com.sg.flooringmastery/orders/Orders_05012027.txt";
+    private static final String FILE_PATH = "files/orders/Orders_05012027.txt";
 
     //Create a mock instance of the OrderDaoFileImpl class and assign it to the orderDao variable
     //Does not have the actual implementation of the class methods but can be configured to simulate behavior for testing purposes
@@ -156,7 +157,7 @@ public class OrderDaoFileImplTest {
 
         orderDao.writeOrdersToFileByDate(date, orders);
 
-        Path filePath = Paths.get("src/main/java/com.sg.flooringmastery/orders/Orders_05012027.txt");
+        Path filePath = Paths.get("files/orders/Orders_05012027.txt");
         assertTrue(Files.exists(filePath));
     }
 

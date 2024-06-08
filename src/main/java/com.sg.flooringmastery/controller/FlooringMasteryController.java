@@ -1,9 +1,9 @@
 package com.sg.flooringmastery.controller;
 
-import com.sg.flooringmastery.dao.OrderPersistenceException;
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 import com.sg.flooringmastery.service.FlooringMasteryServiceLayerImpl;
-import com.sg.flooringmastery.service.ProductDaoImpl;
+import com.sg.flooringmastery.dao.ProductDaoImpl;
 import com.sg.flooringmastery.ui.FlooringMasteryView;
 
 import java.math.BigDecimal;
