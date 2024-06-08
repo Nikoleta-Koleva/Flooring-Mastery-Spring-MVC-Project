@@ -55,8 +55,7 @@ public class OrderDaoFileImpl implements OrderDao {
 
     @Override
     public Order getOrderToRemove(List<Order> orders, int orderNumber) {
-        Order orderToRemove = checkIfOrderExists(orders, orderNumber);
-        return orderToRemove;
+        return checkIfOrderExists(orders, orderNumber);
     }
 
     public List<Order> readOrdersFromFileByDate(Date date) {

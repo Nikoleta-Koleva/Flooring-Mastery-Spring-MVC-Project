@@ -2,10 +2,7 @@ package com.sg.flooringmastery.dao;
 
 import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -18,8 +15,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 
@@ -81,7 +78,7 @@ public class OrderDaoImplTests {
         List<Order> orders = orderDao.getOrdersForDate(date);
 
         // Verify that no orders are returned
-        assertTrue(orders.isEmpty());
+        Assertions.assertTrue(orders.isEmpty());
     }
 
     @Test
@@ -94,7 +91,7 @@ public class OrderDaoImplTests {
         orderDao.addOrder(date, order);
 
         Path filePath = Paths.get(FILE_PATH);
-        assertTrue(Files.exists(filePath));
+        Assertions.assertTrue(Files.exists(filePath));
     }
 
     @Test
@@ -133,7 +130,7 @@ public class OrderDaoImplTests {
         Order result = orderDao.checkIfOrderExists(orders, 1);
 
         // Verify that the returned order is not null
-        assertNotNull(result);
+        Assertions.assertNotNull(result);
 
         // Verify that the order number of the returned order matches the expected order number
         assertEquals(1, result.getOrderNumber());
@@ -144,7 +141,7 @@ public class OrderDaoImplTests {
         List<Order> orders = Collections.emptyList();
 
         Order result = orderDao.checkIfOrderExists(orders, 1);
-        assertNull(result);
+        Assertions.assertNull(result);
     }
 
     @Test
@@ -158,7 +155,7 @@ public class OrderDaoImplTests {
         orderDao.writeOrdersToFileByDate(date, orders);
 
         Path filePath = Paths.get("files/orders/Orders_05012027.txt");
-        assertTrue(Files.exists(filePath));
+        Assertions.assertTrue(Files.exists(filePath));
     }
 
     @Test

@@ -13,5 +13,4 @@ OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborC
 6,Test2,KY,6.00,Carpet,200.00,2.25,2.10,450.00,420.00,52.20,922.20
 7,Nikoleta,WA,9.25,Tile,325.00,3.50,4.15,1137.50,1348.75,229.98,2716.23
 8,Test,CA,25.00,Carpet,155.00,2.25,2.10,348.75,325.50,168.56,842.81
-9,Testing,KY,6.00,Tile,300.00,3.50,4.15,1050.00,1245.00,137.70,2432.70
 10,Michael Jackson,CA,25.00,Carpet,150.00,2.25,2.10,337.50,315.00,163.13,815.63

@@ -16,10 +16,10 @@ import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class FlooringMasteryServiceLayerImpl implements FlooringMasteryServiceLayer {
-    private OrderDao orderDao;
-    private TaxDao taxDao;
-    private ProductDao productDao;
-    private Scanner userInput = new Scanner(System.in);
+    private final OrderDao orderDao;
+    private final TaxDao taxDao;
+    private final ProductDao productDao;
+    private final Scanner userInput = new Scanner(System.in);
 
     public FlooringMasteryServiceLayerImpl(OrderDao dao, TaxDao taxDao, ProductDao productDao) {
         this.orderDao = dao;
@@ -28,13 +28,11 @@ public class FlooringMasteryServiceLayerImpl implements FlooringMasteryServiceLa
     }
 
     public List<Order> getOrdersByDate(Date date) {
-        List<Order> orders = orderDao.getOrdersForDate(date);
-        return orders;
+        return orderDao.getOrdersForDate(date);
     }
 
     public List<Order> readOrdersFromFileByDate(Date date) throws OrderPersistenceException {
-        List<Order> orders = orderDao.readOrdersFromFileByDate(date);
-        return orders;
+        return orderDao.readOrdersFromFileByDate(date);
     }
 
     public void addOrder(Date date, Order order) throws OrderPersistenceException {

@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 
 public class FlooringMasteryController {
-    private FlooringMasteryView view;
-    private FlooringMasteryServiceLayerImpl service;
+    private final FlooringMasteryView view;
+    private final FlooringMasteryServiceLayerImpl service;
 
     public FlooringMasteryController(FlooringMasteryServiceLayerImpl service, FlooringMasteryView view) {
         this.service = service;

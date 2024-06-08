@@ -24,13 +24,11 @@ public class FlooringMasteryView {
     }
 
     public Date promptForDate() {
-        Date date = io.readDate("Please enter order date:");
-        return date;
+        return io.readDate("Please enter order date:");
     }
 
     public int promptForOrderNum() {
-        int orderNum = io.readInt("Please enter order number:");
-        return orderNum;
+        return io.readInt("Please enter order number:");
     }
 
     public Date getUserInputForOrderDate() {
@@ -48,11 +46,7 @@ public class FlooringMasteryView {
     private boolean isValidDate(Date date) {
         Date currentDate = new Date();
 
-        if (date.after(currentDate)) {
-            return true;
-        } else {
-            return false;
-        }
+        return date.after(currentDate);
     }
 
     public void displayOrderSummaries(List<Order> orders) {
