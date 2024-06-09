@@ -1,5 +1,6 @@
 package com.sg.flooringmastery.dao;
 
+import com.sg.flooringmastery.exceptions.OrderPersistenceException;
 import com.sg.flooringmastery.model.Order;
 
 import java.io.BufferedReader;
@@ -14,9 +15,19 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class OrderDaoFileImpl implements OrderDao {
-    private final String BACKUP_DIRECTORY_PATH = "backup";
-    private final String ORDERS_DIRECTORY_PATH = "src/main/java/com.sg.flooringmastery/orders";
+    private final String BACKUP_DIRECTORY_PATH;
+    private final String ORDERS_DIRECTORY_PATH;
     private static final String DELIMITER = ",";
+
+    public OrderDaoFileImpl() {
+        this.BACKUP_DIRECTORY_PATH = "backup";
+        this.ORDERS_DIRECTORY_PATH = "files/orders";
+    }
+
+    public OrderDaoFileImpl(String ordersDirectoryPath, String backupDirectoryPath) {
+        this.BACKUP_DIRECTORY_PATH = backupDirectoryPath;
+        this.ORDERS_DIRECTORY_PATH = ordersDirectoryPath;
+    }
 
     //Gives a list of orders by date
     @Override
@@ -44,8 +55,7 @@ public class OrderDaoFileImpl implements OrderDao {
 
     @Override
     public Order getOrderToRemove(List<Order> orders, int orderNumber) {
-        Order orderToRemove = checkIfOrderExists(orders, orderNumber);
-        return orderToRemove;
+        return checkIfOrderExists(orders, orderNumber);
     }
 
     public List<Order> readOrdersFromFileByDate(Date date) {

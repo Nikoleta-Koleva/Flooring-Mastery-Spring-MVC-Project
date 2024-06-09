@@ -10,9 +10,9 @@
 
     <bean id="orderDao" class="com.sg.flooringmastery.dao.OrderDaoFileImpl" />
 
-    <bean id="taxDao" class="com.sg.flooringmastery.service.TaxDaoImpl" />
+    <bean id="taxDao" class="com.sg.flooringmastery.dao.TaxDaoImpl" />
 
-    <bean id="productDao" class="com.sg.flooringmastery.service.ProductDaoImpl" />
+    <bean id="productDao" class="com.sg.flooringmastery.dao.ProductDaoImpl" />
 
     <bean id="view" class="com.sg.flooringmastery.ui.FlooringMasteryView">
         <constructor-arg ref="io" />
